@@ -1,0 +1,47 @@
+
+<section class="products_section py-3">
+@if (isLoading()) {
+    @for (i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]; track i) {
+      
+        <mat-card appearance="outlined">
+          <ngx-skeleton-loader
+            count="1"
+            [theme]="{ height: '200px', 'border-radius': '8px 8px 0 0' }"
+          ></ngx-skeleton-loader>
+          <mat-card-content>
+            <ngx-skeleton-loader
+              count="1"
+              animation="pulse"
+              [theme]="{ height: '24px', 'margin-bottom': '12px', width: '80%' }"
+            ></ngx-skeleton-loader>
+            <ngx-skeleton-loader
+              count="1"
+              animation="pulse"
+              [theme]="{ height: '16px', width: '60%' }"
+            ></ngx-skeleton-loader>
+          </mat-card-content>
+        </mat-card>
+      
+    }
+} @else {
+    @for (product of ProductsList(); track product.id) {
+      <mat-card appearance="outlined">
+        <mat-card-header>
+            <mat-card-title>
+                <span class="truncate-1-lines mb-2">{{ product.title }}</span>
+            </mat-card-title>
+            <mat-card-subtitle>{{ product.category }} | Rating: {{ product.rating.rate }} ({{ product.rating.count }} reviews)</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="product.image" alt="{{ product.title }}" class="py-2 border-top border-bottom">
+        <mat-card-content>
+          <p class="truncate-3-lines pt-2">{{ product.description }}</p>
+          <h3 class="pt-2">Price: {{ product.price | currency }}</h3>
+        </mat-card-content>
+        <mat-card-actions>
+          <button matButton="outlined" (click)="prodactDetails(product.id)">View more</button>
+        </mat-card-actions>
+      </mat-card>
+    }
+}
+
+</section>
