@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './footer.scss'
 })
 export class Footer {
+
+  footerText = signal(`© ${new Date().getFullYear()} APMD. All rights reserved.`)
 
 }
