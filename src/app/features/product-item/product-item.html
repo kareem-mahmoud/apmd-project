@@ -3,6 +3,7 @@
     <mat-card appearance="outlined" class="mx-3 my-2">
       <ngx-skeleton-loader
         count="1"
+        animation="pulse"
         [theme]="{ height: '300px', 'border-radius': '8px 8px 0 0' }"
       ></ngx-skeleton-loader>
       <mat-card-content class="pt-3">
@@ -30,7 +31,7 @@
       <img mat-card-image [src]="product.image" alt="{{ product.title }}" class="py-2 border-top border-bottom product-image">
       <mat-card-content>
         <p class="pt-2">{{ product.description }}</p>
-        <h3 class="pt-2">Price: {{ product.price | currency }}</h3>
+        <h4 class="pt-2">Price: {{ product.price | currency }}</h4>
       </mat-card-content>
       <mat-card-actions>
         <button mat-stroked-button color="primary" (click)="goBack()">Go back</button>

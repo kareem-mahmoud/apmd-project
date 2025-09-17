@@ -65,5 +65,10 @@ src/app
 |-- core/
     |-- services/
         |-- api/
+        |-- products-service/
 |-- shared/
+    |-- header/
+    |-- footer/
 |-- features/
+    |-- products/
+    |-- product-item/

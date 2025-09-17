@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { ProductsService } from '../../../core/services/products-service/products-service';
-import { Product } from '../../../core/modules/app-module';
+import { ProductsService } from '../../core/services/products-service/products-service';
+import { Product } from '../../core/modules/app-module';
 
 
 import { take } from 'rxjs/operators';

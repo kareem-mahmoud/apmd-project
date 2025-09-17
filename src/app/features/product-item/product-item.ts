@@ -7,12 +7,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
-import { Product } from '../../../core/modules/app-module';
-import { ProductsService } from '../../../core/services/products-service/products-service';
+import { Product } from '../../core/modules/app-module';
+import { ProductsService } from '../../core/services/products-service/products-service';
 
 @Component({
   selector: 'app-product-item',
-  standalone: true,
   imports: [
     CommonModule,
     MatButtonModule,
