@@ -1,0 +1,36 @@
+<div class="flex flex-col items-center justify-content-center 
+         p-6 text-center bg-gray-100 rounded-lg shadow-md w-100">
+    <div class="mb-4 text-red-500 w-100 d-flex justify-content-center align-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 148px; height: 148px;">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+    </div>
+    
+    <div class="error-content">
+      <h2 class="text-2xl font-bold text-red-600 mb-2">{{ errorType }}</h2>
+      <p class="text-gray-700 mb-3">{{ error.message }}</p>
+      
+      @if (error.code) {
+        <div class="bg-red-50 text-red-600 px-3 py-1 rounded-md mb-2">
+          Error Code: {{ error.code }}
+        </div>
+      }
+      
+      @if (error.details) {
+        <div class="text-sm text-gray-500 mb-3">
+          {{ error.details }}
+        </div>
+      }
+      
+      @if (error.action) {
+        <button 
+          class="text-dark px-4 py-2"
+          (click)="error.action.handler()"
+        >
+          {{ error.action.label }}
+        </button>
+      }
+    </div>
+</div>

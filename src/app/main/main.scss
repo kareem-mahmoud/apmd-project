@@ -50,11 +50,17 @@
                 }
             }
         }
-        .sortbyPrice-container, .sortbyTitle-container {
+        .sortbyPrice-container, .sortbyTitle-container, .category-container {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            span {
+                display: inline-block;
+                width: 200px;
+                font-size: 1rem;
+                font-weight: 700;
+            }
             .btn1, .btn2 {
                 display: flex;
                 justify-content: center;
@@ -72,6 +78,16 @@
                     font-size: large;
                     padding-top: 4px;
                 }
+            }
+            .btn3 {
+                border-radius: 30px;
+                font-size: large !important;
+                background-color: #4b94d5 !important;
+                color: #fff !important;
+                outline: none !important;
+                border: none !important; 
+                padding-left: 20px; 
+                padding-right: 20px; 
             }
         }
     }

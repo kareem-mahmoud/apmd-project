@@ -10,3 +10,13 @@ export interface Product {
   count: number;
   }
 }
+
+export interface ErrorDetails {
+  message: string;
+  code?: number;
+  details?: string;
+  action?: {
+    label: string;
+    handler: () => void;
+  };
+}

@@ -1,6 +1,12 @@
 
+
+@if (error()) {
+  <app-error [error]="error()!"/>
+}
+
 <section class="products_section py-3" (scroll)="onScrollHandler($event)">
-@if (isLoading()) {
+
+@if (isLoading() && !error()) {
     @for (i of [1,2,3,4,5,6]; track i) {
       
         <mat-card appearance="outlined">
