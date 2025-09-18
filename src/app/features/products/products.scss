@@ -5,6 +5,8 @@
     align-items: start;
     gap: 5px;
     flex-wrap: wrap;
+    height: 80vh;
+    overflow-y: auto;
     mat-card {
         flex: 1 1 calc(33.333% - 16px); /* 3 cards per row, minus gap */
         box-sizing: border-box;

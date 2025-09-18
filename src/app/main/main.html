@@ -2,10 +2,50 @@
     <section class="main-section container-fluid w-100">
         <div class="row">
             <div class="col-9">
-                <app-products ngSkipHydration="true"/>
+                <app-products #productList [searchText]="searchText()"/>
             </div>
-            <div class="col-3 attributes_section">
-                mahmoud
+            <div class="col-3 attributes_section pt-3">
+                <div class="search-container mb-3">
+                    <input
+                        type="text"
+                        name="search"
+                        [(ngModel)]="searchText"
+                        placeholder="Search..."
+                    />
+
+                    <span class="clear_btn">
+                        @if(searchText() === '') {
+                            <mat-icon>search</mat-icon>
+                        }          
+                        @if(searchText() !== '') {
+                            <mat-icon (click)="clearInput()">close</mat-icon>
+                        }     
+                    </span>
+                </div>
+                <div class="sortbyPrice-container py-3 border-top">
+                    <span>Price Sort: </span>
+                    <div class="d-flex flex-row ">
+                        <button mat-button class="btn1" title="Asc" (click)="PriceAsc()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+                        <button mat-button class="btn2 ms-2" tilte="Desc" (click)="PriceDesc()"><mat-icon>keyboard_arrow_down</mat-icon></button>
+                    </div>
+                </div>
+                <div class="sortbyTitle-container py-3 border-top">
+                    <span>Title Sort: </span>
+                    <div class="d-flex flex-row ">
+                        <button mat-button class="btn1" title="Asc" (click)="TitleAsc()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+                        <button mat-button class="btn2 ms-2" tilte="Desc" (click)="TitleDesc()"><mat-icon>keyboard_arrow_down</mat-icon></button>
+                    </div>
+                </div>
+                <div class="category-container align-items-start py-3 border-top">
+                    <span>Category Filter: </span>
+                    <div class="d-flex flex-row justify-content-end flex-wrap">
+                        <button class="btn3 btn btn-primary ms-1 mb-1" title="All" (click)="Categories('All')">All</button>
+                        <button class="btn3 btn btn-primary ms-1 mb-1" title="Men's clothing" (click)="Categories('men\'s clothing')">Men's Clothing</button>
+                        <button class="btn3 btn btn-primary ms-1 mb-1" title="Jewelery" (click)="Categories('jewelery')">Jewelery</button>
+                        <button class="btn3 btn btn-primary ms-1 mb-1" title="Electronics" (click)="Categories('electronics')">Electronics</button>
+                        <button class="btn3 btn btn-primary ms-1 mb-1" title="Women's clothing" (click)="Categories('women\'s clothing')">Women's clothing</button>
+                    </div>
+                </div>    
             </div>
         </div>
     </section>

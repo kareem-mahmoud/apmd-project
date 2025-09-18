@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="bg-primary">
+  <a routerLink="/main" class="app-title">
+    <span>APMD Store</span>
+  </a>
+  <span class="flex-spacer"></span>
+  <a mat-icon-button routerLink="/favorites" aria-label="View favorite items">
+    <mat-icon [matBadge]="favoritesCount()" [matBadgeHidden]="favoritesCount() === 0" matBadgeColor="warn">favorite</mat-icon>
+  </a>
+  <a mat-icon-button routerLink="/cart" aria-label="View shopping cart">
+    <mat-icon [matBadge]="cartCount()" [matBadgeHidden]="cartCount() === 0" matBadgeColor="warn">shopping_cart</mat-icon>
+  </a>
+</mat-toolbar>
