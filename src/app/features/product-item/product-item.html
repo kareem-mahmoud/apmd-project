@@ -35,6 +35,13 @@
       </mat-card-content>
       <mat-card-actions>
         <button mat-stroked-button color="primary" (click)="goBack()">Go back</button>
+        <button mat-stroked-button color="accent" (click)="toggleCart()" class="ms-2">
+          {{ isInCart() ? 'Remove from Cart' : 'Add to Cart' }}
+        </button>
+        <span class="flex-spacer"></span>
+        <button mat-icon-button (click)="toggleFavorite()" aria-label="Add to favorites">
+          <mat-icon>{{ isFavorite() ? 'favorite' : 'favorite_border' }}</mat-icon>
+        </button>
       </mat-card-actions>
     </mat-card>
     }

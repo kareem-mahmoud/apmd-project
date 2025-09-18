@@ -5,4 +5,6 @@ export const routes: Routes = [
     { path: 'main', loadComponent: () => import('./main/main').then(m => m.Main) },
     { path: 'products', loadComponent: () => import('./features/products/products').then(m => m.Products) },
     { path: 'products/:id', loadComponent: () => import('./features/product-item/product-item').then(m => m.ProductItem) }, 
+    { path: 'favorites', loadComponent: () => import('./features/favorites/favorites').then(m => m.Favorites) },
+    { path: 'cart', loadComponent: () => import('./features/cart/cart').then(m => m.Cart) },
 ];

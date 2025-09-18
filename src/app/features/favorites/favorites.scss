@@ -1,0 +1,41 @@
+.favorites-section {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .loading-spinner, .empty-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-size: 1.2rem;
+    color: grey;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .product-card {
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  }
+
+  .product-card-image {
+    height: 200px;
+    object-fit: contain;
+    margin: 16px;
+  }
+
+  .mat-card-title {
+    font-size: 1rem;
+    line-height: 1.2;
+    min-height: 2.4em; // for 2 lines
+  }
+}

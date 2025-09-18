@@ -1,14 +1,12 @@
-<header class="footer w-100 bg-dark text-center text-white py-3">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="d-flex flex-row justify-content-between align-items-center">
-                    <h1 class="h4 mb-0">APMD</h1>
-                    <div class="">
-
-                    </div>
-                </div>    
-            </div>    
-        </div>
-    </div>
-</header>
+<mat-toolbar color="primary" class="bg-primary">
+  <a routerLink="/main" class="app-title">
+    <span>APMD Store</span>
+  </a>
+  <span class="flex-spacer"></span>
+  <a mat-icon-button routerLink="/favorites" aria-label="View favorite items">
+    <mat-icon [matBadge]="favoritesCount()" [matBadgeHidden]="favoritesCount() === 0" matBadgeColor="warn">favorite</mat-icon>
+  </a>
+  <a mat-icon-button routerLink="/cart" aria-label="View shopping cart">
+    <mat-icon [matBadge]="cartCount()" [matBadgeHidden]="cartCount() === 0" matBadgeColor="warn">shopping_cart</mat-icon>
+  </a>
+</mat-toolbar>
