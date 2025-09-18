@@ -6,6 +6,7 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideHttpClient , withInterceptors} from '@angular/common/http';
 import { GlobalErrorHandler } from './core/services/error/global-error-handler';
 import { loggingInterceptor } from './core/services/products-service/logging.interceptor';
+import { cachingInterceptor } from './core/services/products-service/caching.interceptor';
 
 
 
@@ -15,7 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    provideHttpClient(withInterceptors([loggingInterceptor])
+    provideHttpClient(withInterceptors([loggingInterceptor, cachingInterceptor])
 ),
     { 
       provide: ErrorHandler, 
